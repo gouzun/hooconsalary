@@ -1,0 +1,21 @@
+import { Input } from "@material-tailwind/react";
+import { ProjectListContext } from "../../context/projectlist.context";
+import { useContext } from "react";
+
+const AddWScope = ({ titleObject }) => {
+
+    const { titlename } = titleObject;
+    const { addWWorkscope, setAddWorkscope } = useContext(ProjectListContext);
+
+    const handleChange = (event) => {
+        setAddWorkscope(event.target.value);
+    };
+
+    return (<div className="flex-wrap justify-center px-10 py-2 w-80 items-end gap-4">
+        <Input id={titlename} label={titlename} value={addWWorkscope} onChange={handleChange} />
+    </div>
+    );
+
+}
+
+export default AddWScope;
